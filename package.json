@@ -1,0 +1,9 @@
+{
+  "name": "decouverte-node-js",
+  "version": "1.0.0",
+  "description": "decouverte de node.js",
+  "main": "server.js",
+  "repository": "git@github.com:RecCat-Studio/decouverte-node-js.git",
+  "author": "Nicolas Bernin <nicolas.bernin@reccat.io>",
+  "license": "MIT"
+}
