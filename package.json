@@ -5,14 +5,23 @@
   "main": "server.js",
   "scripts": {
     "start": "yarn start:development",
-    "start:development": "nodemon server.js",
-    "start:production": "node server.js",
+    "start:development": "nodemon --exec babel-node -r dotenv/config server.js",
+    "start:production": "babel-node -r dotenv/config server.js",
     "update": "yarn upgrade-interactive --latest"
   },
   "repository": "git@github.com:RecCat-Studio/decouverte-node-js.git",
   "author": "Nicolas Bernin <nicolas.bernin@reccat.io>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.20.11",
+    "@babel/preset-env": "^7.20.2"
   }
 }
