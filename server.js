@@ -1,21 +1,16 @@
 import express from 'express';
 import morgan from 'morgan';
+import router from './src/api/router';
+import config from './src/config/env.config';
 
 const app = express();
 
-app.use(morgan(process.env.FORMAT_LOG));
+app.use(morgan(config.format_log));
 
-app.get('/', (req, res) => {
-    res.status(200).send('Hello World !!!');
-});
+router(app);
 
-app.all('*', (req, res) => {
-    res.status(404).send('404 Not Found');
-});
-
-
-app.listen(process.env.PORT, () => {
-    console.info(`⚡ listening on port ${process.env.PORT} in ${process.env.NODE_ENV} mode ⚡`);
+app.listen(config.port, () => {
+	console.info(`⚡ listening on port ${config.port} in ${config.node_env} mode ⚡`);
 });
 
 
